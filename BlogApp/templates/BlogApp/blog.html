@@ -1,0 +1,32 @@
+{% extends 'MiApp/base.html' %}
+{% load static %}
+
+{% block content %}
+    {% for post in posts %}    
+        <table>
+            <tr>
+                <td rowspan="3">
+                    <img src="{{ post.imagen.url }}" alt="" width="200">
+                </td>
+                <td><h2 class="text-primary" >{{ post.titulo }}</h2></td>
+            </tr>
+            <tr>
+                <td><h4>{{ post.contenido }}</h4></td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        Autor: <strong>{{ post.autor }}</strong>
+                        Categorías:
+                        <strong>
+                            {% for categoria in post.categorias.all %}
+                                {{ categoria }}
+                            {% endfor %}
+                        </strong>
+                    </p>
+                </td>                
+            </tr>
+        </table>
+        <hr>
+    {% endfor %}
+{% endblock %}

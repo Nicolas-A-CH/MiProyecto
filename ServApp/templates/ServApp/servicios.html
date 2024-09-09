@@ -1,0 +1,23 @@
+{% extends 'MiApp/base.html' %}
+{% load static %}
+
+{% block content %}
+    {% for servicio in servicios %}
+    <table>
+        <tr>
+           <td>
+            <h3>{{ servicio.titulo }}</h3>    
+           </td> 
+           <td rowspan="2">
+            <img src="{{ servicio.imagen.url }}" width="300px" >    
+           </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>{{ servicio.contenido }}</h4>    
+               </td>
+        </tr>
+    </table> 
+    <hr>       
+    {% endfor %}
+{% endblock %}

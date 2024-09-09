@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/miapp.css' %}">
+    <title>Mi Tienda de Tecnología</title>
+</head>
+<body>
+    <h2 class="cab text-center fw-bolder">
+        <img src="{% static '/img/MP logo.gif' %}" width="50" class="rounded" >
+        Mi Tienda de Tecnología</h2>
+    
+    <div class="barraNav">
+        <div class="container">
+            <ul class="navbar">
+                <li class="nav-item fs-6">
+                    <a class="nav-link" href="/">Inicio</a>
+                </li>
+                <li class="nav-item fs-6">
+                    <a class="nav-link" href="/servicios">Servicios</a>
+                </li>
+                <li class="nav-item fs-6">
+                    <a class="nav-link" href="/tienda">Tienda</a>
+                </li>
+                <li class="nav-item fs-6">
+                    <a class="nav-link" href="/blog">Blog</a>
+                </li>
+                <li class="nav-item fs-6">
+                    <a class="nav-link" href="/contacto">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>    
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <div class="text-center mt-0">
+            <a href="">Política de Privacidad</a>
+            <a href="">Aviso legal</a>
+            <a href="">Cookies</a>
+        </div>
+        <div class="text-center mt-0">&copy; Mi Aplicación 2024</div>
+    </footer>
+
+    <script src="{% static '/bootstrap/jquery.min.js' %}"></script>
+    <script src="{% static '/bootstrap/bootstrap.min.js' %}"></script>
+</body>
+</html>
