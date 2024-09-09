@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import FormContacto
 from django.core.mail import EmailMessage
+from MiProyecto import settings
 
 # Create your views here.
 def contacto(request):
@@ -14,6 +15,10 @@ def contacto(request):
             correo = equest.POST.get("correi")
             mensaje = request.POST.get("mensaje")
             
-            email = EmailMessage("")
-    
+            email = EmailMessage("Mensaje desde Mi proyecto",
+                                 "El usuario {} con direccion de correo{} escribio lo siguiente"
+                                 .format(nombre, correo, mensaje), settings.EMAIL_HOST_USER,
+                                 correo, reply_to=[correo])
+            
+            
     return render(request, "ContactoApp/contacto.html", {'formulario': form_contacto})
